@@ -1,0 +1,275 @@
+<div class="common-class">
+    <div class="common-class-left">
+       
+        
+      <span class="card-title new-title">Project Detail</span>
+      <div class="" style="display: flex; align-items: center;" (click)="goBack()">
+        <div class="user-go-back-main-inner" >
+            <!-- <img src="../../../assets/img/wallet/user-go-back.png" alt="" /> -->
+            <i class="fa fa-chevron-left"></i>
+          </div>
+    </div>
+    </div>
+  </div>
+  <div class="mobile-view">
+  <div class="custom-project-list-block">
+    <!-- <div class="trash-block">
+      <a class="delete-red" (click)="openDeleteModel(projectsList.projectId)"
+      ><i class="fa fa-trash"></i
+    ></a>
+    </div> -->
+    <div class="custom-row">
+      <div class="custom-col-4">
+        <span>Project ID :</span>
+      </div>
+      <div class="custom-col-8">
+       
+          <span>{{ projectsList?.projectId }}</span>
+      </div>
+      </div>
+      <div class="custom-row">
+        <div class="custom-col-4">
+          <span>Project Name :</span>
+        </div>
+        <div class="custom-col-8">
+            <span> {{ projectsList?.projectName ? projectsList?.projectName : "--" }}</span>
+        </div>
+    </div>
+    <!-- <div class="custom-row">
+      <div class="custom-col-4">
+        <span>Customer Phone No :</span>
+      </div>
+      <div class="custom-col-8">
+          <span>{{ projectsList?.userData?.[0]?.phoneNumber}}</span>
+      </div>
+    </div>
+    <div class="custom-row">
+        <div class="custom-col-4">
+          <span>Customer Name :</span>
+        </div>
+        <div class="custom-col-8">
+            <span> {{ projectsList?.userData?.[0]?.name}}</span>
+        </div>
+    </div> -->
+    <div class="custom-row">
+        <div class="custom-col-4">
+          <span>Supervisor Name :</span>
+        </div>
+        <div class="custom-col-8">
+            <span> {{ projectsList?.supervisor?.name ? projectsList?.supervisor?.name : "--" }}</span>
+        </div>
+    </div>
+    <div class="custom-row">
+      <div class="custom-col-4">
+        <span>Supervisor Phone No :</span>
+      </div>
+      <div class="custom-col-8">
+          <span>{{ projectsList?.supervisor?.phoneNumber}}</span>
+      </div>
+    </div>
+    <div class="custom-row">
+      <div class="custom-col-4">
+        <span>Reg Date :</span>
+      </div>
+      <div class="custom-col-8">
+          <span> {{ projectsList.dealingAgreementDate | date:'dd-MM-yyyy' }}</span>
+       
+      </div>
+    </div>
+    <div class="custom-row">
+      <div class="custom-col-4">
+        <span>Registry Date :</span>
+      </div>
+      <div class="custom-col-8">
+          <span> {{ projectsList.registryDate | date:'dd-MM-yyyy' }}</span>
+       
+      </div>
+    </div>
+    <div class="custom-row">
+      <div class="custom-col-4">
+        <span>Construction Start Date :</span>
+      </div>
+      <div class="custom-col-8">
+          <span> {{ projectsList.constructionStartDate | date:'dd-MM-yyyy' }}</span>
+       
+      </div>
+    </div>
+    <div class="custom-row">
+      <div class="custom-col-4">
+        <span>Location :</span>
+      </div>
+      <div class="custom-col-8">
+          <span> {{ projectsList?.locationText ? projectsList?.locationText : '--' }}</span>
+       
+      </div>
+    </div>
+  <div class="custom-row">
+    <div class="custom-col-4">
+      <span>Size :</span>
+    </div>
+    <div class="custom-col-8">
+      <span> {{ projectsList?.plotSizeBredth ? projectsList?.plotSizeBredth : '--' }} * {{ projectsList?.plotSizeLength ? projectsList?.plotSizeLength : '--' }}</span>
+     
+    </div>
+  </div>
+  <div class="custom-row">
+    <div class="custom-col-4">
+      <span>Gaj :</span>
+    </div>
+    <div class="custom-col-8">
+      <span> {{ projectsList?.sizeInGaj | number:'1.2-2' }}</span>
+     
+    </div>
+  </div>
+  <div class="custom-row">
+    <div class="custom-col-4">
+      <span>Deal Done :</span>
+    </div>
+    <div class="custom-col-8">
+      <span> ₹ {{ projectsList?.amount?.totalAmount ? (projectsList?.amount?.totalAmount | number) : '--'}}</span>
+     
+    </div>
+  </div>
+  <div class="custom-row">
+    <div class="custom-col-4">
+      <span>Bank Loan :</span>
+    </div>
+    <div class="custom-col-8">
+      <span>₹ {{ projectsList?.amount?.loanAmount ? (projectsList?.amount?.loanAmount | number) : '--'}}</span>
+     
+    </div>
+  </div>
+  <div class="custom-row">
+    <div class="custom-col-4">
+      <span>EMI Amount :</span>
+    </div>
+    <div class="custom-col-8">
+      <span>₹ {{ projectsList?.amount?.emiAmount ? (projectsList?.amount?.emiAmount | number) : '--'}}</span>
+     
+    </div>
+  </div>
+  <div class="custom-row">
+    <div class="custom-col-4">
+      <span>Down Payment :</span>
+    </div>
+    <div class="custom-col-8">
+      <span>₹ {{ projectsList?.amount?.downpayment ? (projectsList?.amount?.downpayment | number) : '--'}}</span>
+     
+    </div>
+  </div>
+  <div class="custom-row">
+    <div class="custom-col-4">
+      <span>Status :</span>
+    </div>
+    <div class="custom-col-8">
+        <span [ngStyle]="{ color: projectsList.isActive ? '#00ed64' : 'red' }"> {{ projectsList.isActive ? "Active" : "Inactive" }}</span>
+     
+    </div>
+  </div>
+  
+    </div>
+    <div class="custom-project-list-block">
+      <div class="custom-row2">
+        <div class="custom-col-12">
+          <span>Construction Estimate :</span>
+        </div>
+        <div class="custom-col-12" *ngIf="imagesArray.length > 0">
+            <span class="custom-images" *ngFor="let imageUrl of imagesArray"> 
+              {{imageUrl}}
+    <img [src]=imageUrl alt="Image" />
+  </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-dsh new-card other-pages desktop-view">
+   
+    <div class="card-body comman-scroll-block">
+      <div class="table-responsive user-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th class="custom-pointer"> <span class="mdi mdi-unfold-more-horizontal custom-pointer-inner-icon"></span> Reg Date</th>
+              <th>Project Name</th>
+              <th>Username</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th>Email Address</th>
+              <th>Phone No.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of projectsList">
+              <td>{{ item.projectId }}</td>
+              <td style="white-space: nowrap;">{{ item.createdAt | date:'dd-MM-yyyy' }}</td>
+              <td >
+                <div >
+                  {{ item?.projectName ? item?.projectName : "--" }}
+                </div>
+              </td>
+              <td>{{item?.userName ? item?.userName : '--'}} </td>
+              <td>{{item?.locationText ? item?.locationText : '--'}} </td>
+              <td [ngStyle]="{ color: item.isActive ? '#00ed64' : 'red' }">
+                {{ item.isActive ? "Active" : "Inactive" }}
+              </td>
+              <td>
+                <div class="email-block" *ngIf="item?.email">
+                <span class="icons-i2"><i class="mdi mdi-email menu-icon"></i></span>
+                {{ item?.email }}</div>
+                <div *ngIf="!item?.email">--</div>
+              </td>
+              <td>{{ item?.phone ? item?.phone : "--"}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="no-result-found" *ngIf="projectsList?.length === 0">
+          No result found
+        </div>
+      </div>
+    </div>
+  
+    <!-- Modal -->
+  
+    <!-- Modal 4 document success-->
+  
+    <!-- Modal 5 document reject-->
+    <!-- Modal 6 permission-->    
+  </div>
+ 
+      <div
+      class="modal"
+      id="deleteUserModel"
+      tabindex="-1"
+      role="dialog"
+      [style.display]="modelStyle"
+    >
+      <div class="modal-dialog custome-delete-modal modal-dialog-centered" role="document">
+        <div class="modal-content custom-modal-content">
+          <div class="modal-body">
+            <div class="main-delete-block">
+              <div class="delete-main-image">
+                <img src="../../assets/img/faces/material-symbols_delete.png" />
+              </div>
+              <p class="point-text2">
+                Oops! Do you really want to delete the project ?
+              </p>
+              <div class="custom-delete-modal-footer">
+                
+                <button type="submit" class="btn-yes" (click)="onDeleteProduct()">
+                  Delete
+                </button>
+                <button
+                  class="btn-cancel"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  (click)="closeModel()"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

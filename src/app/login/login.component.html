@@ -1,0 +1,160 @@
+<div class="container container2">
+  <div class="main-login-block">
+    <div class="login-block-inner">
+          <div class="login-contant-block-upper2">
+            <div class="screen-one" *ngIf="screenNumber === 1">
+              <div class="for-button-block">
+                <div class="for-button-block-inner">
+                <button class="btn-lets-start" (click)="showLoginScreen(1)">let’s start
+                </button>
+              </div>
+              </div>
+            </div>
+            <div class="screen-two" *ngIf="screenNumber === 2">
+              <div class="for-button-block">
+                <div class="for-button-block-inner">
+                <button class="btn-lets-start" (click)="showLoginScreen(2)">Next
+
+                </button>
+              </div>
+              </div>
+            </div>
+            <div class="screen-three" *ngIf="screenNumber === 3">
+              <div class="for-button-block">
+                <div class="for-button-block-inner">
+                <button class="btn-lets-start" (click)="showLoginScreen(3)">Next
+
+                </button>
+              </div>
+              </div>
+            </div>
+            <div class="screen-four" *ngIf="screenNumber === 4">
+              <div class="for-button-block">
+                <div class="for-button-block-inner">
+                <button class="btn-lets-start" (click)="showLoginScreen(4)">Next
+                </button>
+              </div>
+              </div>
+            </div>
+            <div class="login-section-screen" *ngIf="screenNumber === 5">
+              <div class="login-image-block567"></div>
+              <div class="login_page_main">
+            <div class="login-contant-block">
+              <h3 class="login-merchant">Customer Login</h3>
+              <div class="form-style">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group pb-3">
+                    <label>Phone Number</label>
+                    <ngx-intl-tel-input [cssClass]="'custom'"
+                [preferredCountries]="[CountryISO.UnitedStates, CountryISO.UnitedKingdom]"
+                [enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]" [selectFirstCountry]="false"
+                [selectedCountryISO]="CountryISO.India" [phoneValidation]="true" name="phoneNumber"
+                formControlName="phoneNumber"></ngx-intl-tel-input>
+              <div class="invalid-feedback" *ngIf="
+             (f.phoneNumber.errors && loginForm.get('phoneNumber').touched) ||
+             (submitted && f.password.errors)
+                      ">
+                Please enter valid number
+              </div>
+                  </div>
+                  <div class="form-group pb-3">
+                    <label>Password</label>
+                    <div class="for-cross-block">
+                   
+                    <input
+                    type="{{ showPassword ? 'text' : 'password' }}"
+                      placeholder="Password"
+                      class="form-control"
+                      id="exampleInputPassword1"
+                      formControlName="password"
+                      [ngClass]="{
+                        'is-invalid': submitted && f.password.errors
+                      }"
+                    />
+                    <div class="eye-icon" (click)="togglePasswordVisibility()">
+                      <i class="{{ showPassword ? 'mdi mdi-eye' : 'mdi mdi-eye-off' }}"></i>
+                  </div>
+                  </div>
+                    <div
+                      *ngIf="submitted && f.password.errors"
+                      class="invalid-feedback"
+                    >
+                      <div *ngIf="f.password.errors?.required">
+                        Password is required
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div class="d-flex align-items-center"></div>
+                    <!-- <div class="forgot">
+                      <a [routerLink]="['/reset-password']">Forget Password?</a>
+                    </div> -->
+                  </div>
+                  <div class="pb-2">
+                    <button
+                      [disabled]="loading"
+                      type="submit"
+                      class="btn admin-login w-100 font-weight-bold mt-2"
+                    >
+                      <span
+                        *ngIf="loading"
+                        class="spinner-border spinner-border-sm mr-1"
+                      ></span>
+                      Login
+                    </button>
+                  
+                    <!-- <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div> -->
+                  </div>
+                </form>
+              </div>
+            </div>
+            </div>
+            </div>
+          </div>
+        
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="timeReached"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog small-modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-content-custom">
+      
+      <div class="modal-body">
+      <div class="resched-popup">
+        <p>You have reached out your 3 limits</p>
+        <p>Try after sometime</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="sessionTimeOut"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog small-modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-content-custom">
+      
+      <div class="modal-body">
+      <div class="resched-popup">
+        <p>Session Timed Out</p>
+        <p>Try after sometime</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,105 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <span *ngFor="let menuItem of listTitles">
+    <li
+      routerLinkActive="active"
+      *ngIf="!menuItem?.subMenus"
+      class="{{ menuItem.class }} nav-item"
+    >
+      <a
+        *ngIf="menuItem.title == 'Logout'"
+        class="nav-link logOutUser"
+        href="javascript:void(0);"
+        data-toggle="modal"
+        data-target="#logoutModal"
+      >
+      <img [src]="menuItem.icon">
+
+        <span class="menu-title">{{ menuItem.title }}</span>
+      </a>
+      <a
+        class="nav-link"
+        *ngIf="menuItem.title != 'Logout' && !menuItem.subMenus"
+        [routerLink]="[menuItem.path]"
+      >
+      <img [src]="menuItem.icon">
+        <span class="menu-title">{{ menuItem.title }}</span>
+      </a>
+     
+      
+    </li>
+    <span *ngIf="menuItem?.subMenus">
+      <span class="accordion-header" id="headingTwo">
+        <span class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <img class="custom-inactive" [src]="menuItem.icon">
+          <!-- <img class="custom-active" [src]="menuItem.icon2"> -->
+        <span class="menu-title" style="margin-left: 10px;">{{ menuItem.title }}</span>
+        </span>
+      </span>
+      <div id="collapseTwo" class="accordion-collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <ul class="">
+            <li routerLinkActive="active"
+            *ngFor="let menuItem of menuItem?.subMenus"
+            class="{{ menuItem.class }} nav-item" style="margin-left: 30px;">
+            <a
+            class="nav-link"
+            [routerLink]="[menuItem.path]"
+          >
+            <span class="menu-title">{{ menuItem.title }}</span>
+          </a></li>
+          </ul>
+        </div>
+      </div>
+   
+  </span>
+</span>
+  </ul>
+</nav>
+
+<!-- Logout Modal-->
+
+<div
+  class="modal fade"
+  id="logoutModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group row">
+              <h3 style="text-align: center">
+                Are you sure! You want to Logout?
+              </h3>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="modal-footer border-top-0 d-flex justify-content-center"
+            >
+              <button
+                type="button"
+                class="btn logout-cancel-button"
+                data-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                class="btn btn-success modal-button successeModalLabel"
+                (click)="logutUser()"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

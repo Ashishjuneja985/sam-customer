@@ -1,0 +1,36 @@
+<div class="common-class">
+    <!-- <div class="common-class-left">
+        <div class="" style="display: flex; align-items: center;" (click)="goBack()">
+            <div class="user-go-back-main-inner" >
+                <img src="../../../assets/img/wallet/user-go-back.png" alt="" />
+              </div>Back
+        </div>
+    </div> -->
+    <div class="common-class-left">
+       
+        
+        <span class="card-title new-title">Profile</span>
+        <div class="" style="display: flex; align-items: center;" (click)="goBack()">
+          <div class="user-go-back-main-inner" >
+              <!-- <img src="../../../assets/img/wallet/user-go-back.png" alt="" /> -->
+              <i class="fa fa-chevron-left"></i>
+            </div>
+      </div>
+      </div>
+  </div>
+  <div class="mobile-view">
+    <div class="custom-project-list-block">
+        <!-- <ul>
+            <li ><a [routerLink]="['/profile-change-password']">Change Password</a></li>
+            <li (click)="logutUser()">Logout</li>
+        </ul> -->
+       
+            <div class="">
+                <a [routerLink]="['/profile/profile-change-password']"><button class="custom-button">Change Password</button></a>
+            </div>
+            
+            <button class="custom-button"
+            (click)="logutUser()">Logout</button>
+       
+        </div>
+ </div>

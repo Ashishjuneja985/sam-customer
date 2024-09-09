@@ -1,0 +1,154 @@
+<div class="content-wrapper2">
+  <div class="page-header">
+    <div class="header-responsive-block">
+      <h3 class="page-title">Dashboard</h3>
+     
+    </div>
+  </div>
+  <div class="">
+  <div class="row">
+    <div class="col-md-3 mb-3 col-12">
+      <div class="prgressImage">
+        <div class="total-deal-amount-image">
+          <img src="../../assets/img/faces/deal_done.png" alt="..." />
+        </div>
+        <div class="prgressImage-right prgressImage-right-two">
+          <h5 class="">₹ {{statatics?.totalDealAmount ? (statatics?.totalDealAmount | number) :'0'}}</h5>
+          <p class="">Total Deal Amount </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3 col-12">
+      <div class="prgressImage">
+        <div class="total-recived-image">
+          <img src="../../assets/img/faces/money_recieved.png" alt="..." />
+        </div>
+        <div class="prgressImage-right prgressImage-right-three">
+          <h5 class="">₹ {{statatics?.totalAmountReceived ? (statatics?.totalAmountReceived | number) :'0'}}</h5>
+          <p class="">Total Amount Received</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- <div class="row">
+    <div class="col-md-12">
+      <div class="card-dsh new-card">
+        <div class="card-body">
+          <h4 class="card-title new-title">User Configuration</h4>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="custom-pedding-left">Username</th>
+                  <th>User ID</th>
+                  <th>Status</th>
+                  <th>Wallet Balance</th>
+                  <th>Last Login</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of users.totalUsers">
+                  <td>
+                    <div class="usert-img">
+                      <div class="usert-img-inner">
+                        <img
+                          src="../../assets/img/faces/face1.jpg"
+                          alt="image"
+                        />
+                      </div>
+                      <div class="usert-img-inner-text">
+                        <p class="custom-user-name">{{ item.userName }}</p>
+                        <p class="custom-user-email">{{ item.email.email }}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>{{ item._id }}</td>
+                  <td>Active</td>
+                  <td>{{ item.balance.mainWallet }}</td>
+                  <td>10 days ago {{ modelStyle }}</td>
+                  <td>
+                    <a
+                      [routerLink]="['/dashboard/user-profile', item._id]"
+                      class="pencile-green"
+                      ><i class="fa fa-pencil"></i
+                    ></a>
+                    <a class="delete-red" (click)="openDeleteModel(item)"
+                      ><i class="fa fa-trash"></i
+                    ></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="custom-button-block">
+          <button class="btn viewAllButton" [routerLink]="'/user-management'">
+            View all
+          </button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div
+    class="modal"
+    id="deleteUserModel"
+    tabindex="-1"
+    role="dialog"
+    [style.display]="modelStyle"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content custom-modal-content">
+        <div class="modal-body">
+          <div class="main-delete-block">
+            <div class="delete-main-image">
+              <img src="../../assets/img/faces/material-symbols_delete.png" />
+            </div>
+            <p class="point-text2">
+              Oops! Do you really want to delete the account -
+              <span>{{ deleteUserId }} </span> ?
+            </p>
+            <div class="custom-delete-modal-footer">
+              <button
+                type="submit"
+                class="btn btn-cancel"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="closeModel()"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-yes" (click)="deleteUser()">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- <div class="modal fade" id="deleteUserModel" tabindex="-1"  [style.display]="modelStyle">
+        <div class="modal-dialog small-modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="custom-modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="main-delete-block">
+                    <div class="delete-main-image">
+                        <img src="../../assets/img/faces/material-symbols_delete.png">
+                      </div>
+                    <p class="point-text2">Oops! Do you really want to delete the account - <span>{{deleteUserId}} </span> ?</p>
+                    <div class="custom-delete-modal-footer">
+                        <button type="submit" class="btn btn-cancel"  data-dismiss="modal" aria-label="Close" (click)="closeModel()">Cancel </button>
+                        <button type="submit" class="btn btn-yes" (click)="deleteUser()"> Delete</button>
+                    </div>
+                </div>
+            </div>
+           
+          </div>
+        </div>
+      </div> -->
+</div>

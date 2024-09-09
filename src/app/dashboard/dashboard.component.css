@@ -1,0 +1,321 @@
+.custom-right-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.prgressImage {
+  /* display: flex; */
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prgressImage-left {
+  width: 100%;
+  max-width: 50px;
+}
+a {
+  cursor: pointer;
+}
+
+.prgressImage-left img {
+  width: 100% !important;
+  margin-left: 0px !important;
+}
+
+.prgressImage-right p,
+.prgressImage-right2 .loyaltyPoints {
+  margin-bottom: 0px;
+  color: #000;
+  font-size: 16px;
+}
+.prgressImage-right h5
+{
+  font-size: 20px;
+  font-weight: 600;
+}
+.card-dsh {
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.mobile-data-export {
+  display: none;
+}
+.custom-button-block {
+  text-align: right;
+}
+.prgressImage-upper-joint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  min-height: 95px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.prgressImage6 {
+  display: flex;
+  align-items: center;
+}
+.prgressImage-right2 .total-balance {
+  margin-bottom: 6px;
+  white-space: nowrap;
+  color: #000;
+  font-size: 12px;
+  font-weight: 600;
+}
+.prgressImage-right2 {
+  padding-left: 10px;
+}
+.prgressImage-right4 .average-from-last-month {
+  margin-bottom: 5px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.average-from-last-month-inner img {
+  width: 100%;
+  max-width: 20px;
+  margin-right: 7px;
+}
+.average-from-last-month-inner {
+  font-size: 10px;
+  color: #a5a5a5 !important;
+}
+.average-from-last-month-inner span {
+  font-size: 12px;
+  color: #38e25d !important;
+  font-weight: 600;
+  margin-right: 4px;
+}
+.change-periode {
+  color: #000;
+  font-size: 12px;
+  font-weight: 600;
+}
+.change-text-data {
+  font-size: 10px;
+  color: #a5a5a5;
+}
+.custom-dropdown-toggle {
+  padding-left: 50px;
+}
+.usert-img {
+  display: flex;
+  align-items: center;
+}
+.delete-main-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff2d2d;
+  margin: auto;
+}
+.delete-main-image img {
+  width: 100%;
+  max-width: 30px;
+}
+.custom-modal-content {
+  padding: 20px;
+}
+.main-delete-block {
+  text-align: center;
+}
+p.point-text2 {
+  text-align: center;
+  margin: 0px;
+  padding: 20px 0px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+}
+.point-text2 span {
+  color: #9a9a9a !important;
+}
+p.custom-user-name {
+  font-weight: 600;
+  margin-bottom: 0px;
+  font-size: 13px;
+}
+.usert-img-inner-text {
+  padding-left: 10px;
+}
+p.custom-user-email {
+  color: #a5a5a5 !important;
+  margin-bottom: 0px;
+  font-size: 12px;
+}
+.custom-delete-modal-footer {
+  text-align: center;
+}
+.custom-delete-modal-footer .btn-cancel {
+  color: #898989;
+  border: 1px solid #898989;
+  background-color: #ffffff;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.custom-delete-modal-footer .btn-yes {
+  background-color: #ff2d2d;
+  color: #ffffff;
+  border-radius: 10px;
+}
+.custom-padding-manage-right {
+  padding-right: 10px !important;
+}
+.custom-padding-manage-left {
+  padding-left: 10px !important;
+}
+.custom-pedding-left
+{
+  padding-left: 40px;
+}
+.custom-padding-manage-both {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+#chart {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.apexcharts-legend text {
+  font-weight: bold;
+}
+.chart-container
+  {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .chart-container apx-chart
+  {
+    width: 100%;
+    height: 100%;
+    
+  }
+@media only screen and (max-width: 767px) {
+  .content-wrapper {
+    background: #f2edf3;
+    padding: 2.75rem 10px;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+
+  .page-header {
+    display: block !important;
+  }
+
+  .page-header .page-title {
+    color: #252B5C !important;
+    font-size: 27px !important;
+    font-weight: 800 !important;
+  }
+
+  .mobile-data-export {
+    display: initial !important;
+  }
+
+  .web-data-export {
+    display: none !important;
+  }
+  .prgressImage-right-one h5
+  {
+color:#FA00FF !important
+  }
+  #chart {
+    max-width: 200px;
+    margin: 35px auto;
+    padding: 0;
+  }
+  #chart2 {
+    max-width: 200px;
+    margin: 35px auto;
+    padding: 0;
+  }
+  .prgressImage-right-two h5
+  {
+    color:#8DFF00 !important
+  }
+  .prgressImage-right-three h5
+  {
+    color:#1541DD !important
+  }
+
+  .header-responsive-block {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mobile-breadcrumb {
+    padding: 5px 10px !important;
+  }
+
+  nav.ndash-icon.change {
+    margin-right: 0px !important;
+    background-color: #fff !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+
+  .prgressImage-left {
+    width: 20%;
+  }
+
+  .prgressImage-left img {
+    width: 100% !important;
+    margin-left: 0px !important;
+    max-width: 50px;
+  }
+  .custom-padding-manage-right, .custom-padding-manage-left, .custom-padding-manage-both
+  {
+padding-left: 20px !important;
+padding-right: 20px !important;
+  }
+  .total-project-image, .total-deal-amount-image, .total-recived-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    line-height: 50px;
+    margin: 0px auto 10px  auto;
+}
+.total-project-image{
+  background-color: #fa00ff17;
+  border: 1px solid #FA00FF;
+  border-style: dashed;
+}
+.total-deal-amount-image{
+  background-color: #8dff0029;
+  border: 1px solid #8dff00;
+  border-style: dashed;
+}
+.total-recived-image{
+  background-color: #1541dd33;
+  border: 1px solid #1541dd;
+  border-style: dashed;
+  
+}
+.total-project-image img, .total-recived-image img {
+  width: 100%;
+  max-width: 30px;
+}
+.total-deal-amount-image img{
+  width: 100%;
+  max-width: 40px;
+}
+}

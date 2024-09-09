@@ -1,0 +1,154 @@
+<div class="common-class">
+  <div class="common-class-right">
+    <div class="search-field custom-search">
+      <form class="d-flex align-items-center h-100" action="#">
+        <div class="input-group">
+          <div class="input-group-prepend bg-transparent">
+            <i class="input-group-text border-0 mdi mdi-magnify"></i>
+          </div>
+          <input type="text" class="form-control bg-transparent border-0" placeholder="Search here"
+            (keyup)="seach($event)"  (keydown)="restrickedWord($event)"/>
+        </div>
+      </form>
+    </div>
+  </div>
+    <div class="common-class-left">
+      <span class="card-title new-title">Project List
+      </span>
+       
+    </div>
+   
+  </div>
+  <div class="mobile-view" *ngIf="projectsList.length !== 0">
+  <div class="custom-project-list-block" *ngFor="let item of projectsList">
+    <!-- <div class="trash-block">
+      <a class="delete-red" (click)="openDeleteModel(item.projectId)"
+      ><i class="fa fa-trash"></i
+    ></a>
+    </div> -->
+    <div class="custom-row">
+      <div class="custom-col-4">
+        <span>Project ID :</span>
+      </div>
+      <div class="custom-col-8">
+       
+          <span>{{ item.projectId }}</span>
+      </div>
+      </div>
+      <div class="custom-row">
+        <div class="custom-col-4">
+          <span>Project Name :</span>
+        </div>
+        <div class="custom-col-8">
+            <span> {{ item?.projectName ? item?.projectName : "--" }}</span>
+         
+        </div>
+    </div>
+    <div class="custom-row">
+      <div class="custom-col-4">
+        <span>Phone No. :</span>
+      </div>
+      <div class="custom-col-8">
+          <span>{{ item?.supervisor?.phoneNumber}}</span>
+       
+      </div>
+    </div>
+  <div class="custom-row">
+    <div class="custom-col-4">
+      <span>Deal done :</span>
+    </div>
+    <div class="custom-col-8">
+      <span> ₹ {{ item?.amount?.totalAmount ? (item?.amount?.totalAmount | number) : '--'}}</span>
+     
+    </div>
+  </div>
+  <div class="custom-row">
+    <div class="custom-col-4">
+      <span>Bank loan :</span>
+    </div>
+    <div class="custom-col-8">
+      <span>₹ {{ item?.amount?.loanAmount ? (item?.amount?.loanAmount | number) : '--'}}</span>
+     
+    </div>
+  </div>
+  <div class="custom-row">
+    <div class="custom-col-4">
+      <span>Status :</span>
+    </div>
+    <div class="custom-col-8">
+        <span [ngStyle]="{ color: item.isActive ? '#00ed64' : 'red' }"> {{ item.isActive ? "Active" : "Inactive" }}</span>
+     
+    </div>
+  </div>
+  <div class="trash-block2">
+    <a [routerLink]="['/project/project-details',item.projectId]">View Details</a>
+  </div>
+    </div>
+  </div>
+  <div class="no-result-found" *ngIf="projectsList.length === 0">
+    No result found
+  </div>
+  <div class="card-dsh new-card other-pages desktop-view">
+   
+    <div class="card-body comman-scroll-block">
+      <div class="table-responsive user-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Project ID</th>
+              <th (click)="sorting('createdAt')" class="custom-pointer"> <span class="mdi mdi-unfold-more-horizontal custom-pointer-inner-icon"></span> Reg Date</th>
+              <th>Project Name</th>
+              <th>Username</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th>Email Address</th>
+              <th>Phone No.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of projectsList">
+              <td>{{ item.projectId }}</td>
+              <td style="white-space: nowrap;">{{ item.createdAt | date:'dd-MM-yyyy' }}</td>
+              <td >
+                <div >
+                  {{ item?.projectName ? item?.projectName : "--" }}
+                </div>
+              </td>
+              <td>{{item?.userName ? item?.userName : '--'}} </td>
+              <td>{{item?.locationText ? item?.locationText : '--'}} </td>
+              <td [ngStyle]="{ color: item.isActive ? '#00ed64' : 'red' }">
+                {{ item.isActive ? "Active" : "Inactive" }}
+              </td>
+              <td>
+                <div class="email-block" *ngIf="item?.email">
+                <span class="icons-i2"><i class="mdi mdi-email menu-icon"></i></span>
+                {{ item?.email }}</div>
+                <div *ngIf="!item?.email">--</div>
+              </td>
+              <td>{{ item?.phone ? item?.phone : "--"}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="no-result-found" *ngIf="projectsList?.length == 0">
+          No result found
+        </div>
+      </div>
+      <div class="next-previous-button-block">
+        <button class="btn btn-previous" *ngIf="currentPage > 1" (click)="paginationAndSorting('PREVIOUS')">
+          Previous
+        </button>
+        <button class="btn btn-next" (click)="paginationAndSorting('NEXT')"
+          *ngIf="totalPage > 1 && totalPage != currentPage">
+          Next
+        </button>
+      </div>
+      <div>
+        <p>Page {{ currentPage }} of {{ totalPage }}</p>
+      </div>
+    </div>
+  
+    <!-- Modal -->
+  
+    <!-- Modal 4 document success-->
+  </div>
+     
